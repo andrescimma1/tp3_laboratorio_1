@@ -13,7 +13,38 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int indice = 1;
+    int cantidadLeida;
+    FILE *pArchivo;
+
+    pArchivo = fopen(path, "r");
+
+    if(pArchivo == NULL)
+    {
+        printf("No se encuentra espacio en la memoria.\n\n");
+    }
+
+    while(!feof(pArchivo))  //Mientras no haya llegado al final del fichero
+    {
+        //indice = buscarLibre(vec, size);
+
+        cantidadLeida = fread((pArrayListEmployee + indice), sizeof(LinkedList), 1, pArchivo);
+
+        if(cantidadLeida < 1)
+        {
+            if(feof(pArchivo))
+            {
+                indice = 0;
+                break;
+            }
+            else
+            {
+                printf("Problemas para leer el archivo");
+            }
+        }
+
+    }
+    return indice;
 }
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).

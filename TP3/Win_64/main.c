@@ -23,15 +23,21 @@ int main()
 {
     int option = 0;
     LinkedList* listaEmpleados = ll_newLinkedList();
-    /*do{
-        switch(option)
+    do{
+        switch(menu())
         {
             case 1:
-                controller_loadFromText("data.csv",listaEmpleados);
+                controller_loadFromText("data.csv", listaEmpleados);
+                break;
+            case 2:
+                controller_loadFromBinary("data.csv", listaEmpleados);
+                break;
+            default:
+                printf("Opcion ingresada invalida.\n");
                 break;
         }
-    }while(option != 10);*/
-
+    }while(option != 10);
+/*
     //Hardcodeo 3 empleados
     Employee* emp1 = employee_newParametros("1234", "Juan", "234", "25000");
     Employee* emp2 = employee_newParametros("2222", "Julia", "100", "15000");
@@ -91,7 +97,7 @@ int main()
     {
         mostrarEmpleado((Employee*) ll_get(listaEmpleados, i));
     }
-
+*/
 
     return 0;
 }

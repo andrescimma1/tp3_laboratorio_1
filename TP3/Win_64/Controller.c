@@ -13,7 +13,33 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int cantidadLeida = 0;
+    char c;
+    system("cls");
+    FILE *pArchivo = NULL;
+    Employee empleados;
+    pArchivo = fopen(path, "r");
+    if(pArchivo != NULL)
+    {
+        while(1)
+        {
+            c=fgetc(pArchivo);
+            if(feof(pArchivo))
+            {
+                break;
+            }
+            printf("%c", c);
+        }
+    }
+    else
+    {
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    fclose(pArchivo);
+    system("pause");
+
+    return 0;
 }
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
@@ -25,7 +51,33 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int cantidadLeida = 0;
+    char c;
+    system("cls");
+    FILE *pArchivo = NULL;
+    Employee empleados;
+    pArchivo = fopen(path, "rb");
+    if(pArchivo != NULL)
+    {
+        while(1)
+        {
+            c=fgetc(pArchivo);
+            if(feof(pArchivo))
+            {
+                break;
+            }
+            printf("%c", c);
+        }
+    }
+    else
+    {
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    fclose(pArchivo);
+    system("pause");
+
+    return 0;
 }
 
 /** \brief Alta de empleados
@@ -37,6 +89,9 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+    printf("Ingrese su nombre: ");
+    printf("Ingrese las horas trabajadas: ");
+    printf("Ingrese sueldo: ");
     return 1;
 }
 

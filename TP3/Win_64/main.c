@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
@@ -23,7 +24,7 @@ int main()
 {
     int option = 0;
     LinkedList* listaEmpleados = ll_newLinkedList();
-    do{
+   /* do{
         switch(menu())
         {
             case 1:
@@ -36,10 +37,10 @@ int main()
                 printf("Opcion ingresada invalida.\n");
                 break;
         }
-    }while(option != 10);
-/*
+    }while(option != 10);*/
+
     //Hardcodeo 3 empleados
-    Employee* emp1 = employee_newParametros("1234", "Juan", "234", "25000");
+/*    Employee* emp1 = employee_newParametros("1234", "Juan", "234", "25000");
     Employee* emp2 = employee_newParametros("2222", "Julia", "100", "15000");
     Employee* emp3 = employee_newParametros("1111", "Juana", "330", "35000");
     Employee* emp4 = employee_newParametros("5555", "Sofia", "210", "23000");
@@ -98,6 +99,39 @@ int main()
         mostrarEmpleado((Employee*) ll_get(listaEmpleados, i));
     }
 */
+    Employee* emp;
+    FILE *pFile;
+    int todoOk;
+    int r;
+    int i = 0;
+    char cad1[20], cad2[20], cad3[20], cad4[20];
+
+    pFile = fopen("data.csv", "r");
+
+    if(pFile == NULL)
+    {
+        return -1;
+    }
+
+    do
+    {
+        r = fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", cad1, cad2, cad3, cad4);
+        if(strcmp(cad1, "id") && r==4)
+        {
+            Employee* pAux = employee_new();
+            employee_setId(pAux, atoi(cad1));
+            employee_setNombre(pAux, cad2);
+            employee_setHorasTrabajadas(pAux, atoi(cad3));
+            employee_setSueldo(pAux, atoi(cad4));
+            emp = pAux;
+            todoOk = ll_add(listaEmpleados, emp);
+            printf("%d", todoOk);
+
+            printf("%d %s %d %d\n", emp->id, emp->nombre, emp->horasTrabajadas, emp->sueldo);
+
+            i++;
+        }
+    }while(!feof(pFile) && i < 100);
 
     return 0;
 }

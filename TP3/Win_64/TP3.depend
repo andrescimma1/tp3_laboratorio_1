@@ -114,3 +114,34 @@
 	"LinkedList.h"
 	"Employee.h"
 
+1561501523 source:c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\employee.c
+	"Employee.h"
+	<stdlib.h>
+	<string.h>
+
+1561501523 c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\employee.h
+
+1561501523 source:c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561501523 c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\linkedlist.h
+
+1561502819 source:c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561501934 source:c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1561501523 c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\controller.h
+

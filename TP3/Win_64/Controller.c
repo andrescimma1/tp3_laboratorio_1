@@ -85,15 +85,22 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
-    int auxId, auxHorasTrabajadas, auxSueldo;
     char auxNombre[20];
+    Node* A = NULL;
+
+    A = (Node*)malloc(sizeof(Node));
+
+
 
     printf("Ingrese su nombre: ");
     gets(auxNombre);
-    printf("Ingrese las horas trabajadas: ");
-    scanf("%d", &auxHorasTrabajadas);
-    printf("Ingrese sueldo: ");
-    scanf("%d", &auxSueldo);
+
+    Employee* pEmp = NULL;
+    pEmp = (Employee*)malloc(sizeof(Employee));
+
+    A->pElement = *(Employee*)pEmp;
+
+
     return 1;
 }
 

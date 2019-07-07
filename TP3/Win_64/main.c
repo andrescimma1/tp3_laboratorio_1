@@ -28,10 +28,10 @@ int main()
         switch(menu())
         {
             case 1:
-                controller_loadFromText("data.csv", listaEmpleados);
+                controller_loadFromText("./data.csv", listaEmpleados);
                 break;
             case 2:
-                controller_loadFromBinary("data.csv", listaEmpleados);
+                controller_loadFromBinary("./data.csv", listaEmpleados);
                 break;
             case 3:
                 controller_addEmployee(listaEmpleados);

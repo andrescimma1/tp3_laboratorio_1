@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "Employee.h"
+#include "parser.h"
 
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
@@ -13,31 +14,22 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-    char c;
     system("cls");
-    FILE *pArchivo = NULL;
+    FILE* pArchivo;
     pArchivo = fopen(path, "r");
+
     if(pArchivo != NULL)
     {
-        while(1)
-        {
-            c=fgetc(pArchivo);
-            if(feof(pArchivo))
-            {
-                break;
-            }
-            printf("%c", c);
-        }
+        parser_EmployeeFromText(pArchivo, pArrayListEmployee);
     }
     else
     {
-        printf("No se pudo abrir el archivo.\n");
+        printf("No se pudo leer el archivo.\n\n");
     }
 
     fclose(pArchivo);
-    system("pause");
 
-    return 0;
+    return 1;
 }
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
@@ -71,9 +63,8 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
     }
 
     fclose(pArchivo);
-    system("pause");
 
-    return 0;
+    return 1;
 }
 
 /** \brief Alta de empleados
@@ -85,20 +76,27 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+    system("cls");
+
+    Employee* emp;
+
+    int indice = -1;
+    char auxId[20];
     char auxNombre[20];
-    Node* A = NULL;
+    char auxHoras[20];
+    char auxSueldo[20];
 
-    A = (Node*)malloc(sizeof(Node));
+    Employee* auxEmp;
 
+    for(i=0; i<ll_len(pArrayListEmployee); i++)
+    {
+        auxEmp = ll_get(pArrayListEmployee, i);
+        if(auxEmp->id == auxId)
+        {
+            indice = i;
+        }
+    }
 
-
-    printf("Ingrese su nombre: ");
-    gets(auxNombre);
-
-    Employee* pEmp = NULL;
-    pEmp = (Employee*)malloc(sizeof(Employee));
-
-    A->pElement = *(Employee*)pEmp;
 
 
     return 1;

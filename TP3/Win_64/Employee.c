@@ -1,4 +1,5 @@
 #include "Employee.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -53,7 +54,7 @@ int employee_setNombre(Employee* this,char* nombre)
 {
     int todoOk = 0;
 
-    if(this != NULL && nombre != NULL && strlen(nombre) > 3)
+    if(this != NULL && nombre != NULL && strlen(nombre) > 1)
     {
         strcpy(this->nombre,nombre);
         todoOk = 1;
@@ -130,9 +131,9 @@ int employee_getSueldo(Employee* this,int* sueldo)
 
 Employee* employee_new()
 {
-    Employee* this = (Employee*) malloc(sizeof(Employee));
+    Employee* this = (Employee*)malloc(sizeof(Employee)); //Crea un espacio en memoria dinámica para una estructura
 
-    if(this != NULL)
+    if(this != NULL) //Si "this" es distinto de NULL, inicializo los campos.
     {
         this->id = 0;
         strcpy(this->nombre, "");
@@ -145,20 +146,20 @@ Employee* employee_new()
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr)
 {
-    Employee* this;
+    Employee* this; //Creo un puntero a la estructura empleado
 
     if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && sueldoStr != NULL)
     {
-        this = employee_new();
+        this = employee_new(); //La funcion retorna un puntero en memoria dinámica que apunta a una estructura.
         if(this != NULL)
         {
             if( !employee_setId(this, atoi(idStr))||
                 !employee_setNombre(this, nombreStr)||
                 !employee_setHorasTrabajadas(this, atoi(horasTrabajadasStr))||
-                !employee_setSueldo(this, atoi(sueldoStr)))
+                !employee_setSueldo(this, atoi(sueldoStr)))  //Si no se pudieron pasar todos los datos..
             {
-                free(this);
-                this = NULL;
+                free(this); //Libera el puntero en memoria dinámica que apunta a la estructura
+                this = NULL; //Le asigna un valor nulo
             }
         }
     }

@@ -36,6 +36,29 @@ int main()
             case 3:
                 controller_addEmployee(listaEmpleados);
                 break;
+            case 4:
+                controller_addEmployee(listaEmpleados);
+                break;
+            case 5:
+                controller_addEmployee(listaEmpleados);
+                break;
+            case 6:
+                controller_addEmployee(listaEmpleados);
+                break;
+            case 7:
+                controller_addEmployee(listaEmpleados);
+                break;
+            case 8:
+                controller_saveAsText("./data.csv", listaEmpleados);
+                system("pause");
+                break;
+            case 9:
+                controller_saveAsBinary("./data.csv", listaEmpleados);
+                system("pause");
+                break;
+            case 10:
+                controller_addEmployee(listaEmpleados);
+                break;
             default:
                 printf("Opcion ingresada invalida.\n");
                 break;

@@ -1,5 +1,7 @@
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
+
+#include "LinkedList.h"
 typedef struct
 {
     int id;
@@ -28,5 +30,6 @@ int employee_getSueldo(Employee* this,int* sueldo);
 void mostrarEmpleado(Employee* emp);
 
 int ordenarXSueldo(void* emp1, void* emp2);
+
 
 #endif // employee_H_INCLUDED

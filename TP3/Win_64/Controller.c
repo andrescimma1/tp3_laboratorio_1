@@ -76,26 +76,10 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
-    system("cls");
-
-    Employee* emp;
-
-    int indice = -1;
     char auxId[20];
     char auxNombre[20];
-    char auxHoras[20];
+    char auxHorasTrabajadas[20];
     char auxSueldo[20];
-
-    Employee* auxEmp;
-
-    for(i=0; i<ll_len(pArrayListEmployee); i++)
-    {
-        auxEmp = ll_get(pArrayListEmployee, i);
-        if(auxEmp->id == auxId)
-        {
-            indice = i;
-        }
-    }
 
 
 
@@ -159,6 +143,30 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
+    Employee* emp;
+    FILE* f;
+    int todoOk=0;
+
+    f = fopen(path,"w");
+
+    if(f != NULL && ll_len(pArrayListEmployee) > 0)
+    {
+
+        for(int i=0; i<ll_len(pArrayListEmployee); i++)
+        {
+
+            emp = ll_get(pArrayListEmployee,i);
+
+            fprintf(f,"%d,%s,%d,%d \n",emp->id,emp->nombre,emp->horasTrabajadas,emp->sueldo);
+            todoOk=1;
+
+        }
+        if(todoOk == 1)
+        {
+            printf("\t Se guardo con exito\n");
+        }
+    }
+
     return 1;
 }
 
@@ -171,6 +179,39 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
+     FILE* f;
+    int x = ll_len(pArrayListEmployee);
+    int todoOk;
+
+    if( pArrayListEmployee != NULL && path != NULL)
+    {
+        f = fopen(path, "wb");
+        if(f != NULL)
+        {
+
+            for(int i=0; i < ll_len(pArrayListEmployee); i++)
+            {
+                fwrite( ll_get(pArrayListEmployee,i), sizeof(Employee), 1, f);
+
+                if((i+1) == x)
+                {
+                    todoOk=1;
+                }
+            }
+
+        }
+        if(todoOk == 1)
+        {
+            printf("\tSe guardo todo con exito\n");
+            fclose(f);
+        }
+        else
+        {
+            printf("No se puedo guardar por algun motivo");
+        }
+
+    }
+
     return 1;
 }
 

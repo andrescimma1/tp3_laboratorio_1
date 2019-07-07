@@ -83,14 +83,16 @@
 	<stdlib.h>
 	<string.h>
 
-1561303184 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\employee.c
+1562514346 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\employee.c
 	"Employee.h"
+	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1561303184 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\employee.h
+1562518835 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\employee.h
+	"LinkedList.h"
 
-1561337913 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\main.c
+1562518318 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -98,21 +100,22 @@
 	"Controller.h"
 	"Employee.h"
 
-1561303184 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\linkedlist.h
+1562514346 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\linkedlist.h
 
-1561303184 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\controller.h
+1562514346 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\controller.h
 
-1561336958 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\parser.c
+1562514346 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1561336681 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\controller.c
+1562518424 source:c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
+	"parser.h"
 
 1561501523 source:c:\users\andy\desktop\tp3 laboratorio\tp3_laboratorio_1\tp3\win_64\employee.c
 	"Employee.h"
@@ -179,4 +182,6 @@
 	"parser.h"
 
 1562451738 c:\users\andy\desktop\tp3 laboratorio 1\tp3_laboratorio_1\tp3\win_64\parser.h
+
+1562514346 c:\users\andy\desktop\tp3\tp3_laboratorio_1\tp3\win_64\parser.h
 
